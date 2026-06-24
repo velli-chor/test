@@ -128,3 +128,8 @@
   color: #ccc;
   flex-shrink: 0;
 }
+
+.adm-grid {
+  display: grid !important;
+  grid-template-columns: 130px 1fr !important;
+}

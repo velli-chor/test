@@ -1,0 +1,100 @@
+/* ============================================================ */
+/* ADITO — sujets admin · admin7.css                            */
+/* cdn.jsdelivr.net/gh/velli-chor/test@main/admin7.css          */
+/* ============================================================ */
+
+.adm-wrap {
+  width: 750px;
+  margin: 0 auto;
+  background-color: var(--neutralDarker2);
+  border: 3px solid var(--neutralDark);
+  outline: 1px solid var(--neutralDarker3);
+}
+
+.adm-header {
+  padding: 14px 18px 10px;
+  border-bottom: 1px solid var(--neutralDarker3);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.adm-titre {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: lowercase;
+  font-style: italic;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.adm-sous {
+  font-size: 9px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--contrastLight);
+  margin-top: 6px;
+  display: inline-block;
+}
+
+.adm-logo {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #d0cdc5;
+  align-self: flex-end;
+}
+
+.adm-body {
+  padding: 24px 36px 30px;
+  font-size: 13px;
+  line-height: 1.9;
+  text-align: justify;
+}
+
+.adm-intro {
+  margin-bottom: 22px;
+}
+
+.adm-dropcap {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  float: left;
+  line-height: 0.8;
+  margin: 4px 6px 0 0;
+  color: #aca89c;
+}
+
+.adm-section {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 24px 0 10px;
+}
+
+.adm-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #e8e5e0;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.adm-rule {
+  padding: 3px 0;
+  display: flex;
+  gap: 6px;
+  line-height: 1.85;
+}
+
+.adm-dash {
+  color: #ccc;
+  flex-shrink: 0;
+}

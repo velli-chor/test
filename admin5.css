@@ -4,7 +4,7 @@
 /* ============================================================ */
 
 .adm-wrap {
-  width: 700px;
+  width: 750px;
   margin: 0 auto;
   background-color: var(--neutralDarker2);
   border: 3px solid var(--neutralDark);
@@ -28,7 +28,6 @@
   font-style: italic;
   line-height: 1.1;
   letter-spacing: 0;
-  color: #aca89c;
 }
 
 .adm-sous {
@@ -64,5 +63,5 @@
   padding: 15px;
   text-align: justify;
   line-height: 19px;
-  font-size: 12px;
+  font-size: 13px;
 }

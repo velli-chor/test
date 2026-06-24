@@ -82,7 +82,7 @@
   font-family: 'Playfair Display', serif;
   font-size: 32px;
   font-weight: 700;
-  color: #e8e5e0;
+  color: var(--gr5);
   line-height: 1;
   flex-shrink: 0;
 }

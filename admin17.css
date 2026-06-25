@@ -1,0 +1,287 @@
+/* ============================================================ */
+/* ADITO — sujets admin · admin7.css                            */
+/* cdn.jsdelivr.net/gh/velli-chor/test@main/admin7.css          */
+/* ============================================================ */
+
+.adm-wrap {
+  width: 750px;
+  margin: 0 auto;
+  background-color: var(--neutralDarker2);
+  border: 3px solid var(--neutralDark);
+  outline: 1px solid var(--neutralDarker3);
+}
+
+.adm-header {
+  padding: 14px 18px 10px;
+  border-bottom: 1px solid var(--neutralDarker3);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.adm-titre {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: lowercase;
+  font-style: italic;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.adm-sous {
+  font-size: 9px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--contrastLight);
+  margin-top: 6px;
+  display: inline-block;
+}
+
+.adm-logo {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #d0cdc5;
+  align-self: flex-end;
+}
+
+.adm-body {
+  padding: 24px 36px 30px;
+  font-size: 13px;
+  line-height: 1.9;
+  text-align: justify;
+}
+
+.adm-intro {
+  margin-bottom: 22px;
+}
+
+.adm-dropcap {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  float: left;
+  line-height: 0.8;
+  margin: 4px 6px 0 0;
+  color: #aca89c;
+}
+
+.adm-section {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 24px 0 10px;
+}
+
+.adm-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--gr5);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.adm-rule {
+  padding: 3px 0;
+  display: flex;
+  gap: 6px;
+  line-height: 1.85;
+}
+
+.adm-dash {
+  color: #ccc;
+  flex-shrink: 0;
+}
+
+/* ====== GROUPES ====== */
+ 
+.adm-grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+ 
+.adm-card {
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--neutralDarker3);
+}
+ 
+.adm-card:nth-child(1),
+.adm-card:nth-child(3) {
+  border-right: 1px solid var(--neutralDarker3);
+}
+ 
+.adm-card-nom {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 700;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--neutralDarker3);
+}
+ 
+.adm-card.sw .adm-card-nom { color: var(--gr3); }
+.adm-card.hd .adm-card-nom { color: var(--accentClrDarker6); }
+.adm-card.gt .adm-card-nom { color: var(--contrastLight); }
+.adm-card.ne .adm-card-nom { color: var(--accentClrDarker); }
+ 
+.adm-card-desc {
+  font-size: 13px;
+  line-height: 1.75;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+ 
+.adm-card-mots {
+  line-height: 1.9;
+}
+
+/* ====== CRÉDITS & STAFF ====== */
+ 
+.adm-disclaimer {
+    font-size: 13px;
+    line-height: 1.85;
+    text-align: center;
+    padding-bottom: 18px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--neutralDarker3);
+}
+ 
+.adm-staff-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+ 
+.adm-staff-col-title {
+    font-family: 'Playfair Display';
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accentClr);
+    margin-bottom: 10px;
+    font-style: italic;
+}
+ 
+.adm-member {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 5px 0;
+  border-bottom: 0.5px solid var(--neutralDarker3);
+  font-size: 11px;
+}
+ 
+.adm-member:last-child {
+  border-bottom: none;
+}
+ 
+.adm-pseudo {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--contrast);
+}
+ 
+.adm-perso {
+    font-size: 11px;
+    color: var(--contrast);
+}
+ 
+.adm-credits-wrap {
+  padding-top: 18px;
+  border-top: 1px solid var(--neutralDarker3);
+}
+ 
+.adm-credits-title {
+    font-family: 'Playfair Display';
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accentClr);
+    margin-bottom: 10px;
+    font-style: italic;
+}
+ 
+.adm-credits {
+  font-size: 12px;
+  line-height: 1.85;
+  text-align: justify;
+}
+
+/* ====== VERSIONS ====== */
+ 
+.adm-versions-note {
+  font-size: 10px;
+  color: var(--contrastLight);
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 16px;
+}
+ 
+.adm-versions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+ 
+.adm-version-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+ 
+.adm-version-img {
+  width: 160px;
+  flex-shrink: 0;
+  border: 1px solid var(--neutralDarker4);
+  padding: 4px;
+  background: var(--neutralDarker2);
+  cursor: pointer;
+  display: block;
+}
+ 
+.adm-version-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  padding-top: 4px;
+}
+ 
+.adm-version-titre {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--accentClrDarker);
+}
+ 
+.adm-version-meta {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--contrastLight);
+}
+
+/* ====== MIAMI ====== */
+ 
+.adm-intro {
+  margin-bottom: 20px;
+  text-align: justify;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--neutralDarker3);
+  color: var(--textColor);
+}
+ 
+.adm-miami-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}

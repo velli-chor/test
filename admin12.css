@@ -140,10 +140,5 @@
 }
  
 .adm-card-mots {
-  font-size: 9px;
-  font-family: 'Source Sans 3', sans-serif;
-  color: var(--contrastLight);
-  letter-spacing: 0.5px;
   line-height: 1.9;
-  font-style: italic;
 }

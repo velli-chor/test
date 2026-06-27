@@ -1,0 +1,332 @@
+/* ============================================================
+   BINGO SUMMER — A Drop in the Ocean
+   À inclure dans la feuille CSS externe (jsDelivr)
+   Phosphor Icons requis (déjà chargé sur le forum)
+   Playfair Display + Source Sans 3 requis (déjà chargés)
+   ============================================================ */
+
+/* Couleurs des 5 colonnes B·I·N·G·O */
+:root {
+  --bingo-b: #e8926a;
+  --bingo-i: #d4729a;
+  --bingo-n: #9b7ec8;
+  --bingo-g: #6aaccc;
+  --bingo-o: #7ec89b;
+  --bingo-b-bg: #fdf1eb;
+  --bingo-i-bg: #fceef4;
+  --bingo-n-bg: #f3eff9;
+  --bingo-g-bg: #eaf4f9;
+  --bingo-o-bg: #edf7f2;
+}
+
+[data-color-scheme="dark"] {
+  --bingo-b-bg: #2a1f1a;
+  --bingo-i-bg: #2a1a22;
+  --bingo-n-bg: #201a2a;
+  --bingo-g-bg: #1a2228;
+  --bingo-o-bg: #1a2820;
+}
+
+/* Masquer le div de données brutes */
+.bingo-data { display: none; }
+
+/* ---- WRAPPER GLOBAL ---- */
+.bingo-wrap {
+  font-family: 'Source Sans 3', sans-serif;
+  width: 480px;
+  margin: 0 auto;
+}
+
+/* ---- CARTE ---- */
+.bingo-card {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--neutralDarker3);
+}
+
+/* ---- HEADER DÉGRADÉ ---- */
+.bingo-header {
+  background: linear-gradient(135deg,
+    var(--bingo-b) 0%,
+    var(--bingo-i) 25%,
+    var(--bingo-n) 50%,
+    var(--bingo-g) 75%,
+    var(--bingo-o) 100%
+  );
+  padding: 18px 18px 14px;
+  text-align: center;
+  position: relative;
+}
+
+.bingo-header-deco {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 10% 50%, rgba(255,255,255,0.12) 0%, transparent 45%),
+    radial-gradient(circle at 90% 30%, rgba(255,255,255,0.10) 0%, transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(255,255,255,0.08) 0%, transparent 35%);
+  pointer-events: none;
+}
+
+.bingo-eyebrow {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.72);
+  display: block;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.bingo-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 2px;
+  line-height: 1;
+  letter-spacing: -0.5px;
+  position: relative;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.10);
+}
+
+.bingo-subtitle {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.70);
+  position: relative;
+}
+
+/* Strip score */
+.bingo-score-strip {
+  background: rgba(255,255,255,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 7px 18px;
+  margin: 12px 18px 0;
+  border-radius: 3px;
+  position: relative;
+}
+
+.bingo-score-num {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.bingo-score-sep {
+  color: rgba(255,255,255,0.45);
+  font-size: 11px;
+}
+
+.bingo-score-label {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.70);
+}
+
+/* Barre de progression */
+.bingo-progress {
+  height: 3px;
+  background: rgba(255,255,255,0.22);
+  margin: 8px 18px 0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bingo-progress-fill {
+  height: 100%;
+  background: rgba(255,255,255,0.82);
+  border-radius: 2px;
+  transition: width 0.35s ease;
+  width: 0%;
+}
+
+/* ---- CORPS ---- */
+.bingo-body {
+  background: var(--neutral);
+  padding: 12px;
+}
+
+/* Lettres B·I·N·G·O */
+.bingo-letters {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3px;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.bingo-letter {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 2px 0;
+}
+
+.bingo-letter:nth-child(1) { color: var(--bingo-b); }
+.bingo-letter:nth-child(2) { color: var(--bingo-i); }
+.bingo-letter:nth-child(3) { color: var(--bingo-n); }
+.bingo-letter:nth-child(4) { color: var(--bingo-g); }
+.bingo-letter:nth-child(5) { color: var(--bingo-o); }
+
+/* ---- GRILLE ---- */
+.bingo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3px;
+  margin-bottom: 10px;
+}
+
+/* Case de base */
+.bingo-cell {
+  aspect-ratio: 1 / 1;
+  background: var(--neutralDarker2);
+  border: 1px solid var(--neutralDarker3);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4px 3px;
+  position: relative;
+  cursor: default;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Cases cochées — couleur selon colonne */
+.bingo-cell.done[data-col="0"] { background: var(--bingo-b-bg); border-color: var(--bingo-b); }
+.bingo-cell.done[data-col="1"] { background: var(--bingo-i-bg); border-color: var(--bingo-i); }
+.bingo-cell.done[data-col="2"] { background: var(--bingo-n-bg); border-color: var(--bingo-n); }
+.bingo-cell.done[data-col="3"] { background: var(--bingo-g-bg); border-color: var(--bingo-g); }
+.bingo-cell.done[data-col="4"] { background: var(--bingo-o-bg); border-color: var(--bingo-o); }
+
+.bingo-cell.done[data-col="0"] .bingo-cell-icon,
+.bingo-cell.done[data-col="0"] .bingo-cell-text { color: var(--bingo-b); }
+.bingo-cell.done[data-col="1"] .bingo-cell-icon,
+.bingo-cell.done[data-col="1"] .bingo-cell-text { color: var(--bingo-i); }
+.bingo-cell.done[data-col="2"] .bingo-cell-icon,
+.bingo-cell.done[data-col="2"] .bingo-cell-text { color: var(--bingo-n); }
+.bingo-cell.done[data-col="3"] .bingo-cell-icon,
+.bingo-cell.done[data-col="3"] .bingo-cell-text { color: var(--bingo-g); }
+.bingo-cell.done[data-col="4"] .bingo-cell-icon,
+.bingo-cell.done[data-col="4"] .bingo-cell-text { color: var(--bingo-o); }
+
+/* Coche ✓ en haut à droite */
+.bingo-cell.done::after {
+  content: "✓";
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  font-size: 7px;
+  font-weight: 900;
+}
+
+.bingo-cell.done[data-col="0"]::after { color: var(--bingo-b); }
+.bingo-cell.done[data-col="1"]::after { color: var(--bingo-i); }
+.bingo-cell.done[data-col="2"]::after { color: var(--bingo-n); }
+.bingo-cell.done[data-col="3"]::after { color: var(--bingo-g); }
+.bingo-cell.done[data-col="4"]::after { color: var(--bingo-o); }
+
+/* Case free space centrale */
+.bingo-cell.bingo-free {
+  cursor: default;
+  background: linear-gradient(135deg,
+    var(--bingo-b),
+    var(--bingo-i),
+    var(--bingo-n),
+    var(--bingo-g),
+    var(--bingo-o)
+  ) !important;
+  border-color: transparent !important;
+}
+
+/* ---- NOM DU MEMBRE ---- */
+.bingo-member-name {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--textColor);
+  text-align: right;
+  padding: 8px 14px 10px;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--neutralDarker3);
+  position: relative;
+}
+
+.bingo-member-name::before {
+  content: "✦";
+  font-style: normal;
+  font-size: 9px;
+  color: var(--bingo-i);
+  margin-right: 6px;
+  vertical-align: middle;
+  opacity: 0.7;
+}
+
+.bingo-free-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 9px;
+  color: #ffffff;
+  line-height: 1.5;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+
+/* Icône et texte dans les cases */
+.bingo-cell-icon {
+  font-size: 16px;
+  color: var(--contrast);
+  margin-bottom: 2px;
+  line-height: 1;
+  display: block;
+}
+
+.bingo-cell-text {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 7px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--textColor);
+  line-height: 1.25;
+}
+
+/* ---- SCORE (affiché dans le footer du body) ---- */
+.bingo-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 8px;
+  border-top: 1px solid var(--neutralDarker3);
+}
+
+.bingo-win-msg {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 11px;
+  background: linear-gradient(90deg, var(--bingo-b), var(--bingo-i));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: none;
+  margin-right: auto;
+}
+
+.bingo-win-msg.on { display: block; }

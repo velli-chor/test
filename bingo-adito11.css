@@ -1,0 +1,328 @@
+/* ============================================================
+   BINGO SUMMER — A Drop in the Ocean
+   À inclure dans la feuille CSS externe (jsDelivr)
+   Phosphor Icons requis (déjà chargé sur le forum)
+   Playfair Display + Source Sans 3 requis (déjà chargés)
+   Source Sans 3 utilisée pour le nom (déjà chargée sur le forum)
+   ============================================================ */
+
+/* Couleurs des 5 colonnes B·I·N·G·O */
+:root {
+  --bingo-b: #e8926a;
+  --bingo-i: #d4729a;
+  --bingo-n: #9b7ec8;
+  --bingo-g: #6aaccc;
+  --bingo-o: #7ec89b;
+  --bingo-b-bg: #fdf1eb;
+  --bingo-i-bg: #fceef4;
+  --bingo-n-bg: #f3eff9;
+  --bingo-g-bg: #eaf4f9;
+  --bingo-o-bg: #edf7f2;
+}
+
+[data-color-scheme="dark"] {
+  --bingo-b-bg: #2a1f1a;
+  --bingo-i-bg: #2a1a22;
+  --bingo-n-bg: #201a2a;
+  --bingo-g-bg: #1a2228;
+  --bingo-o-bg: #1a2820;
+}
+
+/* ---- DARK MODE ---- */
+[data-color-scheme="dark"] .bingo-card { border-color: var(--neutralDarker); }
+[data-color-scheme="dark"] .bingo-header {
+  background: linear-gradient(135deg, #c4724e 0%, #b05278 25%, #7a5eaa 50%, #4a8cac 60%, #5ea87b 100%);
+}
+[data-color-scheme="dark"] .bingo-score-strip { background: rgba(0,0,0,0.20); }
+[data-color-scheme="dark"] .bingo-cell { background: var(--neutralDarker2); border-color: var(--neutralDarker3); }
+[data-color-scheme="dark"] .bingo-cell .bingo-cell-text { color: var(--textColor); }
+[data-color-scheme="dark"] .bingo-cell .bingo-cell-num { color: var(--contrast); }
+
+[data-color-scheme="dark"] .bingo-cell.done[data-col="0"] .bingo-cell-text { color: #f0a882; }
+[data-color-scheme="dark"] .bingo-cell.done[data-col="1"] .bingo-cell-text { color: #e090b8; }
+[data-color-scheme="dark"] .bingo-cell.done[data-col="2"] .bingo-cell-text { color: #b49ee0; }
+[data-color-scheme="dark"] .bingo-cell.done[data-col="3"] .bingo-cell-text { color: #88c4e0; }
+[data-color-scheme="dark"] .bingo-cell.done[data-col="4"] .bingo-cell-text { color: #8ed8b0; }
+
+[data-color-scheme="dark"] .bingo-cell.done[data-col="0"]::after { color: #f0a882; }
+[data-color-scheme="dark"] .bingo-cell.done[data-col="1"]::after { color: #e090b8; }
+[data-color-scheme="dark"] .bingo-cell.done[data-col="2"]::after { color: #b49ee0; }
+[data-color-scheme="dark"] .bingo-cell.done[data-col="3"]::after { color: #88c4e0; }
+[data-color-scheme="dark"] .bingo-cell.done[data-col="4"]::after { color: #8ed8b0; }
+
+[data-color-scheme="dark"] .bingo-footer { border-top-color: var(--neutralDarker3); }
+[data-color-scheme="dark"] .bingo-win-msg {
+  background: linear-gradient(90deg, #f0a882, #e090b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Masquer le div de données brutes */
+.bingo-data { display: none; }
+
+/* ---- WRAPPER GLOBAL ---- */
+.bingo-wrap {
+  font-family: 'Source Sans 3', sans-serif;
+  width: 500px;
+  margin: 0 auto;
+}
+
+/* ---- CARTE ---- */
+.bingo-card {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--neutralDarker3);
+}
+
+/* ---- HEADER DÉGRADÉ ---- */
+.bingo-header {
+  background: linear-gradient(135deg,
+    var(--bingo-b) 0%,
+    var(--bingo-i) 25%,
+    var(--bingo-n) 50%,
+    var(--bingo-g) 75%,
+    var(--bingo-o) 100%
+  );
+  padding: 18px 18px 14px;
+  text-align: center;
+  position: relative;
+}
+
+.bingo-header-deco {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 10% 50%, rgba(255,255,255,0.12) 0%, transparent 45%),
+    radial-gradient(circle at 90% 30%, rgba(255,255,255,0.10) 0%, transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(255,255,255,0.08) 0%, transparent 35%);
+  pointer-events: none;
+}
+
+.bingo-eyebrow {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.72);
+  display: inline-block;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.bingo-eyebrow + .bingo-eyebrow::before {
+  content: "\00B7";
+  letter-spacing: 0;
+  padding: 0 6px;
+}
+
+.bingo-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 2px;
+  line-height: 1;
+  letter-spacing: -0.5px;
+  position: relative;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.10);
+}
+
+.bingo-subtitle {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.70);
+  position: relative;
+}
+
+.bingo-score-strip {
+  background: rgba(255,255,255,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 7px 18px;
+  margin: 12px 18px 0;
+  border-radius: 3px;
+  position: relative;
+}
+
+.bingo-score-num {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.bingo-score-sep { color: rgba(255,255,255,0.45); font-size: 11px; }
+
+.bingo-score-label {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.70);
+}
+
+.bingo-progress {
+  height: 3px;
+  background: rgba(255,255,255,0.22);
+  margin: 8px 18px 0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bingo-progress-fill {
+  height: 100%;
+  background: rgba(255,255,255,0.82);
+  border-radius: 2px;
+  transition: width 0.35s ease;
+  width: 0%;
+}
+
+/* ---- CORPS ---- */
+.bingo-body {
+  background: var(--neutral);
+  padding: 12px;
+}
+
+/* ---- GRILLE ---- */
+.bingo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3px;
+  margin-bottom: 10px;
+}
+
+/* Case de base */
+.bingo-cell {
+  aspect-ratio: 1 / 1;
+  background: var(--neutralDarker2);
+  border: 1px solid var(--neutralDarker3);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4px 3px;
+  position: relative;
+  cursor: default;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Numéro de case — coin haut gauche */
+.bingo-cell-num {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 7px;
+  font-weight: 700;
+  color: var(--contrast);
+  line-height: 1;
+  opacity: 0.6;
+}
+
+/* Cases cochées — couleur selon colonne */
+.bingo-cell.done[data-col="0"] { background: var(--bingo-b-bg); border-color: var(--bingo-b); }
+.bingo-cell.done[data-col="1"] { background: var(--bingo-i-bg); border-color: var(--bingo-i); }
+.bingo-cell.done[data-col="2"] { background: var(--bingo-n-bg); border-color: var(--bingo-n); }
+.bingo-cell.done[data-col="3"] { background: var(--bingo-g-bg); border-color: var(--bingo-g); }
+.bingo-cell.done[data-col="4"] { background: var(--bingo-o-bg); border-color: var(--bingo-o); }
+
+.bingo-cell.done[data-col="0"] .bingo-cell-text { color: var(--bingo-b); }
+.bingo-cell.done[data-col="1"] .bingo-cell-text { color: var(--bingo-i); }
+.bingo-cell.done[data-col="2"] .bingo-cell-text { color: var(--bingo-n); }
+.bingo-cell.done[data-col="3"] .bingo-cell-text { color: var(--bingo-g); }
+.bingo-cell.done[data-col="4"] .bingo-cell-text { color: var(--bingo-o); }
+
+/* Coche ✓ en haut à droite */
+.bingo-cell.done::after {
+  content: "✓";
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  font-size: 7px;
+  font-weight: 900;
+}
+
+.bingo-cell.done[data-col="0"]::after { color: var(--bingo-b); }
+.bingo-cell.done[data-col="1"]::after { color: var(--bingo-i); }
+.bingo-cell.done[data-col="2"]::after { color: var(--bingo-n); }
+.bingo-cell.done[data-col="3"]::after { color: var(--bingo-g); }
+.bingo-cell.done[data-col="4"]::after { color: var(--bingo-o); }
+
+/* ---- ÉTIQUETTE NOM DU MEMBRE ---- */
+.bingo-member-tag {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  background: rgba(255,255,255,0.2);
+  padding: 4px 9px;
+  border-radius: 2px;
+  text-align: left;
+}
+
+.bingo-member-tag-label {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  display: block;
+  line-height: 1.3;
+}
+
+.bingo-member-tag-name {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  display: block;
+  line-height: 1.3;
+}
+
+/* Texte dans les cases */
+.bingo-cell-text {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--textColor);
+  line-height: 1.25;
+}
+
+/* ---- FOOTER ---- */
+.bingo-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 8px;
+  border-top: 1px solid var(--neutralDarker3);
+}
+
+.bingo-win-msg {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 11px;
+  background: linear-gradient(90deg, var(--bingo-b), var(--bingo-i));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: none;
+  margin-right: auto;
+}
+
+.bingo-win-msg.on { display: block; }

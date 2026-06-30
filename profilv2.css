@@ -1,0 +1,147 @@
+/* ============================================
+   INSTAGRAM — PROFIL v2 (généré par JS)
+   profil-v2.css — compatible ForumActif
+   Classes préfixées igv2- pour ne jamais entrer
+   en conflit avec l'ancien système .ig-prof
+   ============================================ */
+
+.igv2-prof {
+  width: 400px;
+  height: 600px;
+  margin: 0 auto;
+  background: var(--neutral);
+  color: var(--textColor);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  border: 1px solid var(--neutralDarker4);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── TOPBAR ── */
+.igv2-topbar {
+  width: 100%;
+  flex-shrink: 0;
+  background: var(--neutralDark);
+  border-bottom: 1px solid var(--neutralDarker4);
+  padding: 10px 14px;
+  box-sizing: border-box;
+}
+.igv2-topbar table { width: 100%; border-collapse: collapse; }
+.igv2-topbar td { vertical-align: middle; padding: 0; }
+.igv2-topbar-handle { font-size: 15px; font-weight: 600; padding: 0 8px; color: var(--textColorAccent); }
+.igv2-topbar-handle i { font-size: 15px; color: #0095f6; vertical-align: middle; }
+.igv2-topbar-right { text-align: right; white-space: nowrap; }
+.igv2-topbar-right i { font-size: 20px; margin-left: 12px; vertical-align: middle; color: var(--textColor); }
+.igv2-topbar i.ph-arrow-left { font-size: 20px; vertical-align: middle; color: var(--textColor); }
+
+/* ── CORPS ── */
+.igv2-body {
+  padding: 14px;
+  background: var(--neutral);
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* ── AVATAR + STATS ── */
+.igv2-header-table { width: 100%; border-collapse: collapse; margin-bottom: 10px; }
+.igv2-header-table td { vertical-align: middle; padding: 0; }
+.igv2-avatar-cell { width: 90px; }
+.igv2-avatar-wrap {
+  width: 84px; height: 84px; border-radius: 50%; padding: 3px;
+  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  display: inline-block;
+}
+.igv2-avatar {
+  width: 78px; height: 78px; border-radius: 50%;
+  background-size: cover; background-position: center;
+  border: 3px solid var(--neutral);
+}
+.igv2-stats { width: 100%; border-collapse: collapse; }
+.igv2-stats td { text-align: center; padding: 0 4px; vertical-align: middle; }
+.igv2-stat-n { display: block; font-weight: 600; font-size: 15px; color: var(--textColorAccent); }
+.igv2-stat-l { display: block; font-size: 11px; color: var(--contrast); }
+
+/* ── BIO ── */
+.igv2-bio { margin: 8px 0 12px; font-size: 13px; line-height: 1.6; }
+.igv2-bio-name { font-weight: 600; font-size: 13px; margin-bottom: 2px; color: var(--textColorAccent); }
+.igv2-bio-pronoms {
+  font-weight: 400; font-size: 11px; color: var(--contrast);
+  background: var(--neutralDarker2); border-radius: 4px; padding: 1px 5px; margin-left: 4px;
+}
+.igv2-bio-txt { color: var(--textColor); font-size: 13px; }
+
+/* ── BOUTONS ── */
+.igv2-btns { width: 100%; border-collapse: collapse; margin-bottom: 14px; }
+.igv2-btns td { padding: 0 3px; vertical-align: middle; }
+.igv2-btns td:first-child { padding-left: 0; }
+.igv2-btns td:last-child  { padding-right: 0; width: 38px; }
+.igv2-btn {
+  display: block; border-radius: 8px; padding: 6px 10px;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  text-align: center; box-sizing: border-box;
+}
+.igv2-btn-follow { background: #0095f6; color: #ffffff; width: 100%; }
+.igv2-btn-msg { background: var(--neutralDarker2); color: var(--textColorAccent); width: 100%; border: 1px solid var(--neutralDarker4); }
+.igv2-btn-icon { background: var(--neutralDarker2); color: var(--textColorAccent); border: 1px solid var(--neutralDarker4); width: 34px; padding: 6px 0; text-align: center; }
+.igv2-btn-icon i { font-size: 16px; vertical-align: middle; }
+
+/* ── HIGHLIGHTS ── */
+.igv2-highlights {
+  border-top: 1px solid var(--neutralDarker4); padding: 12px 0;
+  overflow-x: auto; white-space: nowrap; background: var(--neutral);
+}
+.igv2-hl {
+  display: inline-block; vertical-align: top; text-align: center;
+  margin-right: 14px; cursor: pointer; white-space: normal; width: 62px;
+}
+.igv2-hl:last-child { margin-right: 0; }
+.igv2-hl-ring {
+  width: 60px; height: 60px; border-radius: 50%;
+  border: 1.5px solid var(--neutralDarker4); padding: 2px;
+  box-sizing: border-box; display: inline-block;
+}
+.igv2-hl-img {
+  width: 52px; height: 52px; border-radius: 50%;
+  background-size: cover; background-position: center; display: block;
+}
+.igv2-hl-label {
+  font-size: 11px; color: var(--textColor); text-align: center;
+  display: block; margin-top: 4px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 62px;
+}
+
+/* ── ONGLETS ── */
+.igv2-tabs { border-top: 1px solid var(--neutralDarker4); border-bottom: 1px solid var(--neutralDarker4); width: 100%; border-collapse: collapse; background: var(--neutral); }
+.igv2-tabs td { padding: 0; width: 50%; }
+.igv2-tab-lbl {
+  display: block; text-align: center; padding: 10px 0;
+  color: var(--contrast); cursor: pointer; border-top: 1.5px solid transparent;
+}
+.igv2-tab-lbl i { font-size: 22px; vertical-align: middle; }
+.igv2-tab-lbl.igv2-active {
+  color: var(--textColorAccent);
+  border-top-color: var(--textColorAccent);
+}
+
+.igv2-pane { display: none; }
+.igv2-pane.igv2-visible { display: block; }
+
+/* ── GRILLE PHOTOS ── */
+.igv2-grid { width: 100%; border-collapse: collapse; }
+.igv2-grid td { width: 33.33%; padding: 1px; background: var(--neutral); }
+.igv2-thumb {
+  width: 100%; padding-bottom: 100%;
+  background-size: cover; background-position: center;
+  background-color: var(--neutralDarker2); display: block; position: relative;
+}
+.igv2-tag-badge { position: absolute; top: 5px; left: 5px; font-size: 13px; color: #ffffff; }
+
+/* ── NAVBAR ── */
+.igv2-navbar { flex-shrink: 0; border-top: 1px solid var(--neutralDarker4); background: var(--neutralDark); width: 100%; border-collapse: collapse; }
+.igv2-navbar td { text-align: center; padding: 10px 0; }
+.igv2-navbar i { font-size: 24px; vertical-align: middle; color: var(--textColor); }

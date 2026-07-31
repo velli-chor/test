@@ -1,0 +1,433 @@
+/* ============================================================ */
+/* PROFIL PULSE */
+/* ============================================================ */
+
+.plv-card{
+  max-width: 450px;
+  margin: 0 auto;
+  background: var(--neutralDarker2);
+  border: 1px solid var(--neutralDarker3);
+}
+.plv-card *{ box-sizing: border-box; }
+
+/* ---------------------------------------------------------- */
+/* EN-TÊTE PROFIL — photo + nom + stats                        */
+/* ---------------------------------------------------------- */
+.plv-head{
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 22px 26px 0;
+}
+.plv-avatar{
+  width: 56px; height: 56px; flex-shrink: 0;
+  background-color: var(--neutralDarker4);
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  border: 3px solid var(--neutral);
+  outline: 1px solid var(--neutralDarker3);
+}
+.plv-name{
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--textColor);
+  text-transform: lowercase;
+  line-height: 1;
+}
+.plv-stats{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 7px;
+}
+.plv-stat{
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--contrast);
+}
+.plv-stat b{ color: var(--accentClrDarker); }
+.plv-stat-sep{ color: var(--neutralDarker3); font-size: 9px; }
+
+/* ---------------------------------------------------------- */
+/* CORPS — sections avec eyebrow, sans numérotation             */
+/* ---------------------------------------------------------- */
+.plv-body{ padding: 0 26px 26px; }
+.plv-rule{ height: 1px; background: var(--neutralDarker3); margin: 18px 0 14px; }
+.plv-eyebrow{
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accentClrDarker2);
+  margin: 16px 0 8px;
+}
+
+/* ---------------------------------------------------------- */
+/* LIGNES DE TITRES — pochette + icône play                    */
+/* ---------------------------------------------------------- */
+.plv-row{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--neutralDarker4);
+}
+.plv-row:last-child{ border-bottom: none; }
+.plv-cover{
+  width: 38px; height: 38px; flex-shrink: 0;
+  position: relative;
+  background-color: var(--neutralDarker4);
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  border: 1px solid var(--neutralDarker3);
+}
+.plv-cover i{
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255,255,255,.9);
+  font-size: 17px;
+}
+.plv-song{
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 13.5px;
+  color: var(--textColor);
+  text-transform: lowercase;
+  line-height: 1.25;
+}
+.plv-artist{
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--accentClrDarker);
+  margin-top: 1px;
+}
+
+/* ---------------------------------------------------------- */
+/* GRILLE DE PLAYLISTS — bloc optionnel, voir plv-template.html */
+/* ---------------------------------------------------------- */
+.plv-plgrid{ display: flex; gap: 8px; flex-wrap: wrap; }
+.plv-pl{ flex: 0 1 calc((100% - 16px) / 3); min-width: 0; }
+.plv-plcover{
+  width: 100%; aspect-ratio: 1/1;
+  background-color: var(--neutralDarker4);
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  border: 1px solid var(--neutralDarker3);
+}
+.plv-pltitle{
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 11px;
+  color: var(--textColor);
+  text-transform: lowercase;
+  text-align: center;
+  margin-top: 6px;
+  line-height: 1.25;
+}
+
+/* ---------------------------------------------------------- */
+/* EN ÉCOUTE — pochette latérale + égaliseur animé              */
+/* ---------------------------------------------------------- */
+.plv-listen{ display: flex; }
+.plv-listen-img{
+  width: 110px; flex-shrink: 0;
+  background-color: var(--neutralDarker4);
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+}
+.plv-listen-body{
+  flex: 1;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.plv-listen .plv-eyebrow{ margin: 0 0 6px; }
+.plv-listen .plv-song{ font-size: 16px; }
+.plv-listen .plv-artist{ font-size: 9.5px; margin-top: 4px; }
+
+.plv-eq{ display: flex; align-items: flex-end; gap: 2px; height: 16px; margin-top: 10px; }
+.plv-eq span{ width: 2.5px; display: block; background: var(--accentClrDarker3); }
+.plv-eq span:nth-child(1){ animation: plv-eq1 .9s ease-in-out infinite; }
+.plv-eq span:nth-child(2){ animation: plv-eq2 .9s ease-in-out infinite .15s; }
+.plv-eq span:nth-child(3){ animation: plv-eq3 .9s ease-in-out infinite .3s; }
+@keyframes plv-eq1{ 0%,100%{ height:5px } 50%{ height:14px } }
+@keyframes plv-eq2{ 0%,100%{ height:11px } 50%{ height:4px } }
+@keyframes plv-eq3{ 0%,100%{ height:7px } 50%{ height:16px } }
+
+/* ---------------------------------------------------------- */
+/* POSTER UNE PLAYLIST — gabarit complet                        */
+/* ---------------------------------------------------------- */
+.plv-post-top{ display: flex; gap: 16px; padding: 22px 26px 0; }
+.plv-post-cover{
+  width: 88px; height: 88px; flex-shrink: 0;
+  position: relative;
+  background-color: var(--neutralDarker4);
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  border: 1px solid var(--neutralDarker3);
+}
+.plv-post-cover i{
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255,255,255,.9);
+  font-size: 32px;
+}
+.plv-post-name{
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--textColor);
+  text-transform: lowercase;
+  line-height: 1.15;
+  margin-top:13px;
+}
+.plv-post-by{
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--contrast);
+}
+.plv-post-by b{ color: var(--accentClrDarker); }
+.plv-post-desc{
+  font-size: 11.5px;
+  line-height: 1.75;
+  text-align: justify;
+  color: var(--textColor);
+  padding: 0 26px;
+  margin-top: 12px;
+}
+
+/* ============================================================ */
+/* PROFIL TINDER  */
+/* ============================================================ */
+
+.tnd-card{
+  max-width: 450px;
+  margin: 0 auto;
+  background: var(--neutralDarker2);
+  border: 1px solid var(--neutralDarker3);
+}
+.tnd-card *{ box-sizing: border-box; }
+
+/* ---------------------------------------------------------- */
+/* PROFIL — en-tête (nom + âge + lieu)                          */
+/* ---------------------------------------------------------- */
+.tnd-head{ padding: 16px 18px 12px; }
+.tnd-name{
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--textColor);
+  text-transform: lowercase;
+}
+.tnd-name span{
+  font-family: 'Source Sans 3', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--contrast);
+  margin-left: 4px;
+}
+.tnd-loc{
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accentClrDarker);
+  margin-top: 3px;
+}
+
+/* ---------------------------------------------------------- */
+/* PROFIL — grille photo (1 grande + 2 petites)                 */
+/* ---------------------------------------------------------- */
+.tnd-photos{
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3px;
+  padding: 0 3px;
+  margin-top: -10px;
+}
+.tnd-photo-main{
+  aspect-ratio: 1/1.1;
+  background-color: var(--neutralDarker4);
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+}
+.tnd-photo-sub{ display: grid; grid-template-rows: 1fr 1fr; gap: 3px; }
+.tnd-photo-small{
+  background-color: var(--neutralDarker4);
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+}
+
+/* ---------------------------------------------------------- */
+/* PROFIL — bio                                                 */
+/* ---------------------------------------------------------- */
+.tnd-bio{
+  padding: 5px 18px;
+  font-size: 13px;
+  line-height: 1.65;
+  text-align: justify;
+}
+
+/* ---------------------------------------------------------- */
+/* PROFIL — prompts (question + réponse)                        */
+/* ---------------------------------------------------------- */
+.tnd-prompt{
+  padding: 12px 18px;
+  border-top: 1px solid var(--neutralDarker4);
+}
+.tnd-prompt-q{
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--accentClrDarker);
+}
+.tnd-prompt-a{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12.5px;
+  color: var(--textColor);
+  margin-top: 5px;
+  line-height: 1.55;
+  font-style: italic;
+}
+
+/* ---------------------------------------------------------- */
+/* PROFIL — boutons like / pass                                 */
+/* ---------------------------------------------------------- */
+.tnd-actions{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 14px;
+}
+.tnd-btn{
+  width: 38px; height: 38px;
+  border: 1px solid var(--neutralDarker3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+}
+.tnd-btn.pass{ color: var(--contrastLighter3); }
+.tnd-btn.like{ color: var(--accentClr); border-color: var(--accentClrDarker3); }
+
+/* ---------------------------------------------------------- */
+/* IT'S A MATCH — cercles collés + bouton                       */
+/* ---------------------------------------------------------- */
+.tnd-match{ padding: 20px 22px; text-align: center; }
+.tnd-match-photos{ display: flex; justify-content: center; }
+.tnd-match-ph{
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background-color: var(--neutralDarker4);
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  border: 3px solid var(--neutralDarker2);
+  outline: 1px solid var(--neutralDarker3);
+}
+.tnd-match-ph:last-child{ margin-left: -20px; }
+.tnd-match-title{
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--textColor);
+  margin-top: 12px;
+}
+.tnd-match-sub{
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accentClrDarker);
+  margin-top: 4px;
+}
+.tnd-match-btn{
+  margin-top: 14px;
+  display: inline-block;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--accentClr);
+  padding: 8px 20px;
+}
+
+/* ---------------------------------------------------------- */
+/* LIKE / DISLIKE — bandeaux plats                               */
+/* ---------------------------------------------------------- */
+.tnd-banner{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+}
+.tnd-banner-ph{
+  width: 40px; height: 40px; flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--neutralDarker4);
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+}
+.tnd-banner-icon{ font-size: 18px; }
+.tnd-banner.like .tnd-banner-icon{ color: var(--accentClr); }
+.tnd-banner.dislike .tnd-banner-icon{ color: var(--accentClrDarker3); }
+.tnd-banner-text{
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--textColor);
+}
+.tnd-banner-link{
+  margin-left: auto;
+  flex-shrink: 0;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--accentClr) !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+.tnd-banner-text b{
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+  text-transform: lowercase;
+  letter-spacing: 0;
+  font-size: 13px;
+}

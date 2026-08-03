@@ -1,0 +1,210 @@
+/* ============================================================ */
+/* ADITO — fiche de présentation · fpr-fiche.css                */
+/* Une seule couleur d'accent : --fpaccent (redéfinissable par   */
+/* fiche). Largeur et bordure du cadre identiques à .tablepresa  */
+/* / .adm2-wrap. Un seul bloc a un fond distinct : pseudo/pronoms.*/
+/* ============================================================ */
+
+.fpr-wrap{
+  --fpaccent: var(--gr3);
+  width: 470px;
+  margin: 0 auto;
+  background-color: var(--neutral);
+  border: 3px solid var(--neutralDark);
+  outline: 1px solid var(--neutralDarker3);
+  padding: 22px 26px 26px;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--textColor);
+}
+.fpr-wrap *{ box-sizing: border-box; }
+
+/* ---------------------------------------------------------- */
+/* TW                                                            */
+/* ---------------------------------------------------------- */
+.fpr-tw{
+  text-align: center;
+  font-style: italic;
+  font-size: 11px;
+  color: var(--contrast);
+  margin-bottom: 16px;
+}
+
+/* ---------------------------------------------------------- */
+/* EN-TÊTE — photo / nom / ft. / citation / photo               */
+/* sans fond, sans bordure, pleine largeur du cadre              */
+/* ---------------------------------------------------------- */
+.fpr-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.fpr-photo{
+  width: 74px; height: 74px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--neutralDarker4);
+  background-size: cover;
+  background-position: center;
+}
+.fpr-headtext{ text-align: center; flex: 1; }
+.fpr-name{
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: var(--textColorAccent, var(--textColor));
+}
+.fpr-name i{ font-style: italic; font-weight: 500; }
+.fpr-ft{
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--contrastLight);
+  margin-top: 4px;
+}
+.fpr-quote{
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--contrast);
+  margin-top: 10px;
+}
+
+/* ---------------------------------------------------------- */
+/* BLOC identité + caractère — un seul bloc continu, sans fond    */
+/* ---------------------------------------------------------- */
+.fpr-block{
+  margin-bottom: 18px;
+}
+.fpr-text{
+  font-size: 12px;
+  line-height: 1.9;
+  text-align: justify;
+}
+.fpr-text b{ font-weight: 700; }
+
+/* ---------------------------------------------------------- */
+/* LABEL DE SECTION — texte italique coloré, jamais de fond       */
+/* ---------------------------------------------------------- */
+.fpr-label{
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--fpaccent);
+  margin: 4px 0 8px;
+}
+
+/* ---------------------------------------------------------- */
+/* QUESTIONS — plus étroit que les autres blocs, sans fond,      */
+/* juste une barre d'accent à gauche                            */
+/* ---------------------------------------------------------- */
+.fpr-qa{
+  border-left: 2px solid var(--fpaccent);
+  padding: 2px 0 2px 16px;
+  margin: 0 16px 18px;
+}
+.fpr-qa-text{
+  font-size: 11.5px;
+  line-height: 1.9;
+}
+.fpr-qa-text b{
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 10.5px;
+  letter-spacing: .01em;
+}
+
+/* ---------------------------------------------------------- */
+/* DEUX COLONNES — the more you know / chronologie, côte à côte  */
+/* trivia : ni fond ni bordure. chronologie : bordure seule.     */
+/* ---------------------------------------------------------- */
+.fpr-cols{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+.fpr-col{ min-width: 0; }
+.fpr-col-chrono{
+  border: 1px solid var(--neutralDarker4);
+  padding: 14px 16px;
+}
+
+.fpr-scroll{
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+.fpr-scroll::-webkit-scrollbar{ width: 3px; }
+.fpr-scroll::-webkit-scrollbar-track{ background: transparent; }
+.fpr-scroll::-webkit-scrollbar-thumb{ background: var(--fpaccent); border-radius: 2px; }
+
+.fpr-trivia{
+  font-size: 11px;
+  line-height: 1.7;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--neutralDarker4);
+}
+.fpr-trivia:last-child{ border-bottom: none; }
+.fpr-trivia b{ font-weight: 700; color: var(--fpaccent); display: block; margin-bottom: 2px; }
+
+.fpr-tl{ position: relative; padding-left: 14px; }
+.fpr-tl::before{
+  content: "";
+  position: absolute;
+  left: 3px; top: 4px; bottom: 4px;
+  width: 1px;
+  background: var(--neutralDarker4);
+}
+.fpr-tl-item{
+  position: relative;
+  padding: 7px 0 7px 12px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.fpr-tl-item::before{
+  content: "";
+  position: absolute;
+  left: -14px; top: 12px;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--fpaccent);
+}
+.fpr-tl-item b{ font-style: italic; font-family: 'Playfair Display', serif; font-weight: 600; }
+
+/* ---------------------------------------------------------- */
+/* PHOTO CENTRÉE — anneau clair, à cheval sur le bloc hors-RP     */
+/* ---------------------------------------------------------- */
+.fpr-photo-center{
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  border: 1px solid var(--neutralDarker3);
+  padding: 6px;
+  background: var(--neutral);
+  position: relative;
+  margin: 24px auto -42px;
+  z-index: 2;
+}
+.fpr-photo-center-img{
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background-color: var(--neutralDarker4);
+  background-size: cover;
+  background-position: center;
+}
+
+/* ---------------------------------------------------------- */
+/* BLOC pseudo/pronoms — seul bloc avec fond + bordure           */
+/* ---------------------------------------------------------- */
+.fpr-block-ooc{
+  background: var(--neutralDarker2);
+  border: 1px solid var(--neutralDarker3);
+  padding: 56px 20px 20px;
+  margin-bottom: 0;
+}

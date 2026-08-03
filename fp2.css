@@ -1,0 +1,217 @@
+/* ============================================================ */
+/* ADITO — fiche de présentation · fpr-fiche.css                */
+/* Une seule couleur d'accent : --fpaccent (redéfinissable par   */
+/* fiche). Tout le reste passe par les variables du thème        */
+/* principal donc s'adapte tout seul au mode sombre. Largeur et  */
+/* bordure identiques à .tablepresa / .adm2-wrap.                */
+/* ============================================================ */
+
+.fpr-wrap{
+  --fpaccent: var(--gr3);
+  width: 470px;
+  margin: 0 auto;
+  background-color: var(--neutralDarker2);
+  border: 3px solid var(--neutralDark);
+  outline: 1px solid var(--neutralDarker3);
+  padding: 22px 26px 26px;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--textColor);
+}
+.fpr-wrap *{ box-sizing: border-box; }
+
+/* ---------------------------------------------------------- */
+/* TW                                                            */
+/* ---------------------------------------------------------- */
+.fpr-tw{
+  text-align: center;
+  font-style: italic;
+  font-size: 11px;
+  color: var(--contrast);
+  margin-bottom: 16px;
+}
+
+/* ---------------------------------------------------------- */
+/* EN-TÊTE — photo / nom / ft. / citation / photo               */
+/* photo = anneau (bordure) + espace + image, pas collée         */
+/* ---------------------------------------------------------- */
+.fpr-head{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+.fpr-photo{
+  width: 84px; height: 84px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--neutralDarker3);
+  padding: 4px;
+  background: var(--neutral);
+}
+.fpr-photo-img{
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background-color: var(--neutralDarker4);
+  background-size: cover;
+  background-position: center;
+}
+.fpr-headtext{ text-align: center; }
+.fpr-name{
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--textColorAccent, var(--textColor));
+}
+.fpr-name i{ font-style: italic; font-weight: 500; }
+.fpr-ft{
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--contrastLight);
+  margin-top: 4px;
+}
+.fpr-quote{
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--contrast);
+  margin-top: 10px;
+}
+
+/* ---------------------------------------------------------- */
+/* BLOC identité / hors-RP — paragraphe, labels gras + ›         */
+/* ---------------------------------------------------------- */
+.fpr-block{
+  padding: 0 0 4px;
+  margin-bottom: 16px;
+}
+.fpr-text{
+  font-size: 12px;
+  line-height: 1.9;
+  text-align: justify;
+}
+.fpr-text b{ font-weight: 700; }
+
+.fpr-rule{
+  height: 1px;
+  background: var(--neutralDarker4);
+  margin: 16px 0 14px;
+}
+
+/* ---------------------------------------------------------- */
+/* PASTILLE — un seul style pour tous les séparateurs de section */
+/* ---------------------------------------------------------- */
+.fpr-pill{
+  display: inline-block;
+  background: var(--fpaccent);
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 12px;
+  padding: 4px 12px;
+  margin-bottom: 12px;
+}
+
+/* ---------------------------------------------------------- */
+/* QUESTIONS — plus étroit que les autres blocs, barre d'accent  */
+/* ---------------------------------------------------------- */
+.fpr-qa{
+  border-left: 2px solid var(--fpaccent);
+  padding: 2px 0 2px 16px;
+  margin: 0 16px 16px;
+}
+.fpr-qa-text{
+  font-size: 11.5px;
+  line-height: 1.9;
+}
+.fpr-qa-text b{
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 10.5px;
+  letter-spacing: .01em;
+}
+
+/* ---------------------------------------------------------- */
+/* DEUX COLONNES — the more you know / chronologie               */
+/* trivia : pas de fond. chronologie : pas de fond mais bordure. */
+/* Répétables à l'infini, overflow pour ne pas trop rallonger.   */
+/* ---------------------------------------------------------- */
+.fpr-cols{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.fpr-col{ padding: 0; }
+.fpr-col-chrono{
+  border: 1px solid var(--neutralDarker4);
+  padding: 14px 16px;
+}
+
+.fpr-scroll{
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+.fpr-scroll::-webkit-scrollbar{ width: 3px; }
+.fpr-scroll::-webkit-scrollbar-track{ background: transparent; }
+.fpr-scroll::-webkit-scrollbar-thumb{ background: var(--fpaccent); border-radius: 2px; }
+
+.fpr-trivia{
+  font-size: 11px;
+  line-height: 1.7;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--neutralDarker4);
+}
+.fpr-trivia:last-child{ border-bottom: none; }
+.fpr-trivia b{ font-weight: 700; color: var(--fpaccent); display: block; margin-bottom: 2px; }
+
+.fpr-tl{ position: relative; padding-left: 14px; }
+.fpr-tl::before{
+  content: "";
+  position: absolute;
+  left: 3px; top: 4px; bottom: 4px;
+  width: 1px;
+  background: var(--neutralDarker4);
+}
+.fpr-tl-item{
+  position: relative;
+  padding: 7px 0 7px 12px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.fpr-tl-item::before{
+  content: "";
+  position: absolute;
+  left: -14px; top: 12px;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--fpaccent);
+}
+.fpr-tl-item b{ font-style: italic; font-family: 'Playfair Display', serif; font-weight: 600; }
+
+/* ---------------------------------------------------------- */
+/* PHOTO CENTRÉE — à cheval sur le haut du bloc hors-RP           */
+/* ---------------------------------------------------------- */
+.fpr-photo-center{
+  width: 72px; height: 72px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--neutralDarker3);
+  padding: 4px;
+  background: var(--neutral);
+  position: relative;
+  margin: 20px auto -36px;
+  z-index: 2;
+}
+.fpr-photo-center-img{
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background-color: var(--neutralDarker4);
+  background-size: cover;
+  background-position: center;
+}
+.fpr-block-ooc{ padding-top: 44px; }

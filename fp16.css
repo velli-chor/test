@@ -1,0 +1,292 @@
+/* ============================================================ */
+/* ADITO — fiche de présentation · fpr-fiche.css                */
+/* 5 blocs indépendants empilés (comme .tablepresa). Une seule   */
+/* variable de couleur : --fpaccent, définie sur .fpr (wrapper   */
+/* invisible, sans style, juste pour la portée de la variable).  */
+/* ============================================================ */
+
+.fpr *{ box-sizing: border-box; }
+
+/* ---------------------------------------------------------- */
+/* BLOC 1 — en-tête : photos / nom / ft. / citation             */
+/* pas de fond, pas de bordure, 470px de large max              */
+/* ---------------------------------------------------------- */
+.fpr-b1{
+  max-width: 470px;
+  margin: 0 auto -15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--textColor);
+}
+.fpr-b1-tw{
+  text-align: center;
+  font-style: italic;
+  font-size: 11px;
+  color: var(--contrast);
+}
+.fpr-photo{
+    width: 75px;
+    border-radius: 40px;
+    border: 2px solid var(--neutralDarker3);
+    display: block;
+    flex-shrink: 0;
+    margin: 30px;
+    padding: 3px;
+}
+.fpr-b1-mid{ text-align: center; flex: 1; }
+.fpr-name{
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--textColor);
+}
+.fpr-name i{ font-style: italic; font-weight: 500; }
+.fpr-ft{
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+.fpr-quote{
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 12px;
+  color: var(--fpaccent);
+  margin-top: 8px;
+}
+
+/* ---------------------------------------------------------- */
+/* BLOC 2 — identité + caractère, ligne de séparation            */
+/* même fond / bordure que .tablepresa / .adm2-wrap             */
+/* ---------------------------------------------------------- */
+.fpr-b2{
+  width: 470px;
+    margin: 0 auto 16px;
+    background-color: var(--neutralDarker2);
+    border: 3px solid var(--neutralDark);
+    outline: 1px solid var(--neutralDarker3);
+    padding: 0px 15px;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--textColor);
+}
+.fpr-text{
+  font-size: 12px;
+  line-height: 1.9;
+  text-align: justify;
+}
+.fpr-text b{ font-weight: 700; }
+.fpr-rule{
+  height: 1px;
+  background: var(--neutralDarker4);
+  margin: 16px 0 14px;
+}
+.fpr-label{
+  display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--white);
+    margin-bottom: 8px;
+    background: var(--fpaccent) !important;
+    padding: 0px 4px 2px 4px;
+    border-radius: 2%;  
+}
+.fpr-label2 {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 8px;
+    padding: 0px 4px 2px 4px;
+}
+
+.fpr-caractere{
+  max-height: 150px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+.fpr-caractere::-webkit-scrollbar{ width: 3px; }
+.fpr-caractere::-webkit-scrollbar-track{ background: transparent; }
+.fpr-caractere::-webkit-scrollbar-thumb{ background: var(--fpaccent); border-radius: 2px; }
+
+/* ---------------------------------------------------------- */
+/* BLOC 3 — questions : bordure épaisse à gauche seulement,      */
+/* ni fond ni autre bordure, moins large que les autres blocs    */
+/* ---------------------------------------------------------- */
+.fpr-b3{
+  width: 400px;
+  margin: 0 auto 16px;
+  border-left: 4px solid var(--fpaccent);
+  padding: 4px 0 4px 16px;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--textColor);
+}
+.fpr-b3-text{
+  font-size: 11.5px;
+  line-height: 1.9;
+}
+.fpr-b3-text b{
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* ---------------------------------------------------------- */
+/* BLOC 4 — the more you know (fond+bordure) / chronologie      */
+/* (bordure seule), côte à côte, 470px de large au total         */
+/* ---------------------------------------------------------- */
+.fpr-b4{
+  width: 470px;
+    margin: 0 auto 15px;
+  display: flex;
+  gap: 4px;
+}
+.fpr-b4-col{
+  flex: 1;
+  min-width: 0;
+  border: 3px solid var(--neutralDark);
+  outline: 1px solid var(--neutralDarker3);
+  padding: 14px 16px;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--textColor);
+}
+.fpr-b4-know{ background-color: var(--neutralDarker2); }
+.fpr-b4-chrono{ background: none; }
+
+.fpr-scroll{
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+.fpr-scroll::-webkit-scrollbar{ width: 3px; }
+.fpr-scroll::-webkit-scrollbar-track{ background: transparent; }
+.fpr-scroll::-webkit-scrollbar-thumb{ background: var(--fpaccent); border-radius: 2px; }
+
+.fpr-trivia{
+  font-size: 12px;
+  line-height: 1.7;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--neutralDarker4);
+}
+.fpr-trivia:last-child{ border-bottom: none; }
+.fpr-trivia b{ font-weight: 700; color: var(--fpaccent); display: block; margin-bottom: 2px; }
+
+.fpr-tl{ position: relative; padding-left: 14px; }
+.fpr-tl::before{
+  content: "";
+  position: absolute;
+  left: 3px; top: 4px; bottom: 4px;
+  width: 1px;
+  background: var(--neutralDarker4);
+}
+.fpr-tl-item{
+  position: relative;
+  padding: 7px 0 7px 12px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.fpr-tl-item::before{
+  content: "";
+  position: absolute;
+  left: -14px; top: 12px;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--fpaccent);
+}
+.fpr-tl-item b{ font-style: italic; font-family: 'Playfair Display', serif; font-weight: 700; }
+
+/* ---------------------------------------------------------- */
+/* BLOC 5 — pseudo/pronoms, photo à cheval sur le haut           */
+/* même fond / bordure que bloc 2 / bloc 4-gauche                */
+/* ---------------------------------------------------------- */
+.fpr-b5-wrap{
+  max-width: 470px;
+  margin: 10px auto;
+}
+.fpr-photo-center{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid var(--neutralDarker3);
+    padding: 3px;
+    background: var(--neutral);
+    position: relative;
+    margin: -30px auto -24px;
+    z-index: 2;
+}
+.fpr-photo-center-img{
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background-color: var(--neutralDarker4);
+  background-size: cover;
+  background-position: center;
+}
+.fpr-b5{
+    width: 470px;
+    background-color: var(--neutralDarker2);
+    border: 3px solid var(--neutralDark);
+    outline: 1px solid var(--neutralDarker3);
+    padding: 20px 15px 0px;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--textColor);
+}
+
+* ---------------------------------------------------------- */
+/* BLOC 6 — histoire : photo + citation, texte libre            */
+/* pas de fond/bordure sur l'en-tête, fond+bordure sur le texte  */
+/* ---------------------------------------------------------- */
+.fpr-b6-head{
+  max-width: 470px;
+  margin: 0 auto 16px;
+  text-align: center;
+}
+.fpr-b6-photo{
+  width: 100px; height: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 1px solid var(--neutralDarker3);
+  padding: 5px;
+  background: var(--neutral);
+}
+.fpr-b6-photo-img{
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background-color: var(--neutralDarker4);
+  background-size: cover;
+  background-position: center;
+}
+ 
+.fpr-b6{
+  width: 470px;
+  margin: 0 auto 16px;
+  background-color: var(--neutralDarker2);
+  border: 3px solid var(--neutralDark);
+  outline: 1px solid var(--neutralDarker3);
+  padding: 20px 24px;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--textColor);
+}
+.fpr-b6-quote{
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--textColor);
+  text-align: center;
+  line-height: 1.5;
+}
+.fpr-b6-quote-mark{
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  color: var(--fpaccent);
+  margin-right: 3px;
+}
+.fpr-b6-rule{
+  height: 1px;
+  background: var(--neutralDarker4);
+  margin: 16px 0 14px;
+}

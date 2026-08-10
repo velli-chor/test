@@ -1,0 +1,132 @@
+/* ===================================================================
+   SYSTÈME D'ONGLETS DE SUJET — CSS adapté à la DA ADITO
+   Classes préfixées "adito-onglets-" pour éviter tout conflit avec
+   la classe générique .clear déjà utilisée ailleurs sur le forum
+   (cssexterne.css : .clear { clear: both; })
+   =================================================================== */
+
+/* Conteneur de tous les messages d'un sujet à onglets */
+/* Cette classe est ajoutée par le script uniquement si le sujet contient un <button onglet=""> */
+.adito-onglets {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 14px;
+    margin-top: 10px;
+
+    /* Supprime les éléments superflus (avatar, date, boutons like/citer/IP, signature) */
+    .post_profile,
+    .post_date,
+    .like_button,
+    .btn-quote,
+    li:has(.fa-mention),
+    .btn-ip,
+    .signature_div,
+    .fa_like_list {
+        display: none;
+    }
+}
+
+/* Le message qui contient les boutons -> colonne de gauche */
+.adito-onglets .post:has(button[onglet]) {
+    background-color: transparent !important;
+    border: none !important;
+    display: block;
+    grid-row: 1;
+    grid-column: 1;
+    width: 280px;
+    text-align: left;
+    align-items: start;
+    margin-left: -20px;
+}
+
+/* Bloc conteneur des boutons, séparé du reste par un liseré fin */
+.ongletssujet {
+    border-left: var(--border);
+    padding-left: 14px;
+    margin-left: 5px;
+}
+
+/* Bouton d'onglet */
+button[onglet] {
+    display: block;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 10px;
+    padding: 6px 0 4px 10px !important;
+    font-family: var(--fontOS);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--textColor);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+button[onglet]:hover {
+    color: var(--accentClr);
+}
+
+/* Bouton d'onglet actif */
+button[onglet].active {
+    border-left: 2px solid var(--accentClrDarker2);
+    padding-left: 8px !important;
+    margin-left: -2px;
+    font-weight: 700;
+    color: var(--accentClrDarker2);
+}
+
+/* Petit numéro/label optionnel devant le nom de l'onglet, dans l'esprit des sections numérotées ADITO */
+button[onglet]::before {
+    content: "— ";
+    font-family: var(--fontPD);
+    color: var(--contrastLighter3);
+}
+
+button[onglet].active::before {
+    color: var(--accentClrDarker2);
+}
+
+/* Le message qui contient le contenu de l'onglet -> colonne de droite, masqué par défaut */
+.adito-onglets .post:has(div[onglet]) {
+    grid-row: 1;
+    grid-column: 2;
+    display: none;
+    background: var(--neutralDarker2);
+    border: var(--border);
+    padding: 18px 22px;
+}
+
+/* Contenu de l'onglet actuellement ouvert */
+.adito-onglets .post:has(div[onglet]).active {
+    display: block;
+}
+
+/* Titre d'onglet en Libre Bodoni si tu veux styler un <h3>/<d8> à l'intérieur du contenu */
+.adito-onglets div[onglet] h3,
+.adito-onglets div[onglet] .onglet-titre {
+    font-family: var(--fontPD);
+    font-size: var(--title-size);
+    text-transform: lowercase;
+    color: var(--textColorAccent);
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+/* Masque les boutons d'édition quand l'option "Cacher les boutons d'édition" est cochée (mode admin) */
+.adito-onglets.adito-onglets-masque .post_details {
+    display: none;
+}
+
+/* Petit bloc de cases à cocher visible uniquement par les admins */
+.adito-onglets-options {
+    font-family: var(--fontOS);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--contrast);
+    margin-bottom: 10px;
+}
+
+.adito-onglets-options label {
+    cursor: pointer;
+}

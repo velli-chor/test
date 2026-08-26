@@ -1,0 +1,98 @@
+/* ============================================
+   CARTE DE CONTRÔLE TERRITORIAL — ADITO
+   Habillage carte / légende / barre de contrôle
+   ============================================ */
+
+.tm-card {
+  background: #f7f6f2;
+  border: 0.5px solid #d0b38e;
+  border-radius: 4px;
+  padding: 28px 32px;
+  max-width: 680px;
+  box-sizing: border-box;
+  font-family: 'Source Sans 3', 'Open Sans', sans-serif;
+}
+
+.tm-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tm-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 26px;
+  color: #4a4433;
+}
+
+.tm-subtitle {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a8168;
+}
+
+.tm-divider {
+  height: 1px;
+  background: #d0b38e;
+  opacity: 0.6;
+  margin: 14px 0 18px;
+}
+
+.tm-legend {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.tm-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: #4a4433;
+}
+
+.tm-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.tm-svg-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tm-svg-wrap .tm-num {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.tm-svg-wrap .tm-name {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.tm-controlbar-label {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8a8168;
+  margin: 4px 0 8px;
+}
+
+.tm-controlbar {
+  display: flex;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
